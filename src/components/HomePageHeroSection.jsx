@@ -3,7 +3,7 @@ import Robot from "../assets/robot.gif"
 
 function HomePageHeroSection() {
     return (
-        <div className="w-full lg:flex lg:justify-center lg:items-center">
+        <div className="w-full lg:flex lg:justify-center lg:items-center border-b-2 border" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
             <section className="lg:w-[80vw] lg:h-[60vh] h-[80vh] flex justify-center lg:items-center">
                 {/* Left */}
                 <div className="lg:w-[50vw] w-[80vw] flex flex-col justify-center">

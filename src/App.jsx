@@ -6,7 +6,7 @@ import AboutPage from './pages/AboutPage';
 function App() {
   return (
     <Router>
-      <div className="h-screen" style={{ backgroundColor: 'rgba(0,0,0,0.95)' }}>
+      <div className="" style={{ backgroundColor: 'rgba(0,0,0,0.95)' }}>
         <Routes>
           {/* Routes will render based on the current URL */}
           <Route path="/" element={<HomePage/>} />
