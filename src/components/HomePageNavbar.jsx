@@ -21,7 +21,7 @@ function HomePageNavbar() {
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/Eservices'}>E-services</Link></li>
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/Investor'}>Investor Info</Link></li>
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/customercare'}>Customer Care</Link></li>
-                    <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/register'}>Open Account</Link></li>
+                    <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/login'}>Login</Link></li>
                 </ul>
 
                 {/* Hamburger icon for phone view */}
