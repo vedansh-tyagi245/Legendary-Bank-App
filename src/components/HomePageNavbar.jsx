@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from "../assets/logo.svg"
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 function HomePageNavbar() {
     return (
@@ -8,15 +9,29 @@ function HomePageNavbar() {
             <img src={Logo} alt="" srcset="" className='h-15' style={{ margin: '10px' }} />
             <div className='text-white  font-mono' style={{ fontFamily: "Sofia", fontSize: '30px', textShadow: "3px 3px 3px #ababab" }}>Unity Bank</div>
 
-            <li className='flex text-white font-mono gap-20 justify-end w-[80vw]'>
-                <ul className='hover:font-bold cursor-pointer hover:text-gray-400'>Home</ul>
-                <ul className='hover:font-bold cursor-pointer hover:text-gray-400'>About Us</ul>
-                <ul className='hover:font-bold cursor-pointer hover:text-gray-400'>Products</ul>
-                <ul className='hover:font-bold cursor-pointer hover:text-gray-400'>E-services</ul>
-                <ul className='hover:font-bold cursor-pointer hover:text-gray-400'>Investor Info</ul>
-                <ul className='hover:font-bold cursor-pointer hover:text-gray-400'>Customer Care</ul>
-                <ul className='hover:font-bold cursor-pointer hover:text-gray-400'>Open Account</ul>
-            </li>
+            <ul className='flex text-white font-mono gap-20 justify-end w-[80vw]'>
+                <li className='hover:font-bold cursor-pointer hover:text-gray-400'>
+                    <Link to={'/'}>Home</Link>
+                    </li>
+                <li className='hover:font-bold cursor-pointer hover:text-gray-400'>
+                    <Link to={'/about'}>About Us</Link>
+                    </li>
+                <li className='hover:font-bold cursor-pointer hover:text-gray-400'>
+                    <Link to={'/products'}>Products</Link>
+                    </li>
+                <li className='hover:font-bold cursor-pointer hover:text-gray-400'>
+                    <Link to={'/Eservices'}>E-services</Link>
+                    </li>
+                <li className='hover:font-bold cursor-pointer hover:text-gray-400'>
+                    <Link to={'/Investor'}>Investor Info</Link>
+                    </li>
+                <li className='hover:font-bold cursor-pointer hover:text-gray-400'>
+                    <Link to={'/customercare'}>Customer Care</Link>
+                    </li>
+                <li className='hover:font-bold cursor-pointer hover:text-gray-400'>
+                    <Link to={'/register'}>Open Account</Link>
+                    </li>
+            </ul>
         </div>
     )
 }
