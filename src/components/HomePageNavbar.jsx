@@ -10,7 +10,7 @@ function HomePageNavbar() {
         <>
             <nav className='flex items-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
                 <div className={`flex items-center w-[250px]`}>
-                    <img src={Logo} alt="Bank Logo" className='h-15' style={{ margin: '10px' }} />
+                    <img src={Logo} alt="Bank Logo" className='' style={{ margin: '10px', height:"60px" }} />
                     <div className='text-white font-mono' style={{ fontFamily: "Sofia", fontSize: '30px', textShadow: "3px 3px 3px #ababab" }}>Unity Bank</div>
                 </div>
 

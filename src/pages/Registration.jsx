@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import DecorativeElements from "../components/DecorativeElements"
 import HomePageNavbar from "../components/HomePageNavbar"
+import { Link } from "react-router-dom";
+
 const FormRegistration = () => {
     const [darkMode, setDarkMode] = useState(true);
 
@@ -164,7 +166,7 @@ const FormRegistration = () => {
                                 <p className="text-xs text-gray-600 text-center" style={{ "marginTop": "1.5rem" }}>
                                     Already have an account?{" "}
                                     <a href="">
-                                        <span className="text-[#E9522C] font-semibold">Login</span>
+                                        <Link to={'/login'} className="text-[#E9522C] font-semibold">Login</Link>
                                     </a>
                                 </p>
                             </div>

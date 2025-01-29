@@ -8,6 +8,9 @@ function ProjectTimeline() {
     { title: "Created Static Project TimeLine page", description: "Created static Project Timeline page similiar to github branch visualization" },
     { title: "Created Static Registration page", description: "Created static Registration page without any backend connection till now" },
     { title: "Created Registration API", description: "Created Registration API and connected it to Mongodb Database 'BANKDB', and tested it using thunderclient" },
+    { title: "Connected Registration API", description: "Connected the registration API to registration page i.e. frontend connected to backend" },
+    { title: "Created a static login page", description: "Created a static login page" },
+    { title: "Created Backend for logic page and connected it to frontend", description: "same" },
   ];
 
   const [hoveredCommit, setHoveredCommit] = useState(null);
@@ -25,7 +28,7 @@ function ProjectTimeline() {
             className="relative "
             onMouseEnter={() => setHoveredCommit(index)}
             onMouseLeave={() => setHoveredCommit(null)}
-            style={{"paddingLeft":"4rem","marginBottom":"5rem"}}
+            style={{"paddingLeft":"4rem","marginBottom":"2rem"}}
           >
             {/* Commit point */}
             <motion.div
