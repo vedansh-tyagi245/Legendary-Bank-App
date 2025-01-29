@@ -36,7 +36,7 @@ function HomePageNavbar() {
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/Eservices'}>E-services</Link></li>
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/Investor'}>Investor Info</Link></li>
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/customercare'}>Customer Care</Link></li>
-                <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/register'}>Open Account</Link></li>
+                <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/login'}>Login</Link></li>
             </ul>
         </>
     );
