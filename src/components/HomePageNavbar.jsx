@@ -18,8 +18,8 @@ function HomePageNavbar() {
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/'}>Home</Link></li>
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/about'}>About Us</Link></li>
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/products'}>Products</Link></li>
-                    <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/Eservices'}>E-services</Link></li>
-                    <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/Investor'}>Investor Info</Link></li>
+                    <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/Eservices'}>Payment-Gateway</Link></li>
+                    <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/Investor'}>Investing</Link></li>
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/customercare'}>Customer Care</Link></li>
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/login'}>Login</Link></li>
                 </ul>
