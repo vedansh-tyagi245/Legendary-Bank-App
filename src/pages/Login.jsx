@@ -53,7 +53,7 @@ export default function Login() {
   return (
     <section className="h-screen">
       <DecorativeElement />
-      <div className="container h-full p-10">
+      <div className="container h-full p-10 text-white">
         <div className="g-6 flex h-full flex-wrap items-center justify-center text-white0">
           <div className="w-full">
             <div className="block rounded-lg shadow-lg">
