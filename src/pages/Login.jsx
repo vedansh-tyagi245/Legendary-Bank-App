@@ -54,7 +54,7 @@ export default function Login() {
     <section className="h-screen">
       <DecorativeElement />
       <div className="container h-full p-10">
-        <div className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+        <div className="g-6 flex h-full flex-wrap items-center justify-center text-white0">
           <div className="w-full">
             <div className="block rounded-lg shadow-lg">
               <div className="g-0 lg:flex lg:flex-wrap">
