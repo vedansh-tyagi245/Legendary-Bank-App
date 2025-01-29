@@ -7,10 +7,10 @@ import HomePageFooter from '../components/HomePageFooter'
 function AboutPage() {
   return (
     <>
-    {/* <DecorativeElements/>
+    <DecorativeElements/>
     <HomePageNavbar/>
     <About/>
-    <HomePageFooter/> */}
+    <HomePageFooter/>
     </>
   )
 }
