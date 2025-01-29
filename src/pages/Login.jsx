@@ -65,7 +65,7 @@ export default function Login() {
                     {/* Logo */}
                     <div className="text-center">
                       <img className="mx-auto w-20" src={Logo} alt="logo" />
-                      <h4 className="mb-12 mt-1 pb-1 text-xl font-semibold">
+                      <h4 className="mb-12 mt-1 pb-1 text-xl font-semibold text-white">
                         We are The Unity Bank
                       </h4>
                     </div>
