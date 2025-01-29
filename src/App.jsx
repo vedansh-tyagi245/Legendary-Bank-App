@@ -4,7 +4,6 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProjectTimeline from './pages/ProjectTimeline';
 import Registration from './pages/Registration';
-import Temp from './pages/temp';
 
 function App() {
   return (
