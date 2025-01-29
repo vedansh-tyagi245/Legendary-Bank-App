@@ -3,15 +3,76 @@ import DecorativeElements from "../components/DecorativeElements"
 import HomePageNavbar from "../components/HomePageNavbar"
 const FormRegistration = () => {
     const [darkMode, setDarkMode] = useState(true);
+
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        phone: "",
+        password: "",
+        confirmPassword: "",
+    });
+
+    const [error, setError] = useState("");
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (formData.password !== formData.confirmPassword) {
+            setError("Passwords do not match!");
+            return;
+        }
+        setError("");
+
+        try {
+            const response = await fetch("http://localhost:4000/api/v1/registration/send", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    fullName: formData.fullName,
+                    email: formData.email,
+                    phone: formData.phone,
+                    password: formData.password,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                alert("Registration successful!");
+                setFormData({
+                    fullName: "",
+                    email: "",
+                    phone: "",
+                    password: "",
+                    confirmPassword: "",
+                });
+            } else {
+                alert(`Error: ${data.message}`);
+            }
+        } catch (error) {
+            console.error("Error during registration:", error);
+            alert("An error occurred while submitting the form.");
+        }
+    };
+
     return (
         <>
             <div className="page h-screen">
                 <DecorativeElements />
                 <HomePageNavbar />
-                <div className="flex flex-col justify-center items-center w-full" style={{ "paddingLeft": "1.25rem", "paddingRight": "1.25rem", marginTop:"10px" }}>
+                <div className="flex flex-col justify-center items-center w-full" style={{ "paddingLeft": "1.25rem", "paddingRight": "1.25rem", marginTop: "10px" }}>
                     <div
-                        className={`xl:max-w-3xl flex-col justify-center items-center ${darkMode ? "" : "bg-white"
-                            }  w-full sm:p-10 rounded-md`}
+                        className={`xl:max-w-3xl flex-col justify-center items-center w-full sm:p-10 rounded-md`}
                         style={{ "padding": "1.25rem" }}
                     >
                         <h1
@@ -30,7 +91,10 @@ const FormRegistration = () => {
                                             }`}
                                         style={{ "paddingTop": "0.75rem", "paddingBottom": "0.75rem", "paddingLeft": "1.25rem", "paddingRight": "1.25rem" }}
                                         type="text"
-                                        placeholder="Your first name"
+                                        placeholder="Your full name"
+                                        value={formData.fullName}
+                                        onChange={handleInputChange}
+                                        name="fullName"
                                     />
                                 </div>
                                 <input
@@ -41,6 +105,9 @@ const FormRegistration = () => {
                                     style={{ "paddingTop": "0.75rem", "paddingBottom": "0.75rem", "paddingLeft": "1.25rem", "paddingRight": "1.25rem" }}
                                     type="email"
                                     placeholder="Enter your email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    name="email"
                                 />
                                 <input
                                     className={`w-full rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${darkMode
@@ -50,6 +117,9 @@ const FormRegistration = () => {
                                     style={{ "paddingTop": "0.75rem", "paddingBottom": "0.75rem", "paddingLeft": "1.25rem", "paddingRight": "1.25rem" }}
                                     type="tel"
                                     placeholder="Enter your phone"
+                                    value={formData.phone}
+                                    onChange={handleInputChange}
+                                    name="phone"
                                 />
                                 <input
                                     className={`w-full rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${darkMode
@@ -59,6 +129,9 @@ const FormRegistration = () => {
                                     style={{ "paddingTop": "0.75rem", "paddingBottom": "0.75rem", "paddingLeft": "1.25rem", "paddingRight": "1.25rem" }}
                                     type="password"
                                     placeholder="Password"
+                                    value={formData.password}
+                                    onChange={handleInputChange}
+                                    name="password"
                                 />
                                 <input
                                     className={`w-full rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${darkMode
@@ -68,8 +141,11 @@ const FormRegistration = () => {
                                     style={{ "paddingTop": "0.75rem", "paddingBottom": "0.75rem", "paddingLeft": "1.25rem", "paddingRight": "1.25rem" }}
                                     type="password"
                                     placeholder="Confirm Password"
+                                    value={formData.confirmPassword}
+                                    onChange={handleInputChange}
+                                    name="confirmPassword"
                                 />
-                                <button className="tracking-wide font-semibold bg-[#E9522C] text-gray-100 w-full rounded-lg hover:bg-[#E9522C]/90 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none" style={{ "marginTop": "1.25rem", "paddingTop": "1rem", "paddingBottom": "1rem" }}>
+                                <button className="tracking-wide font-semibold bg-[#E9522C] text-gray-100 w-full rounded-lg hover:bg-[#E9522C]/90 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none" style={{ "marginTop": "1.25rem", "paddingTop": "1rem", "paddingBottom": "1rem" }} onClick={handleSubmit}>
                                     <svg
                                         className="w-6 h-6"
                                         fill="none"
