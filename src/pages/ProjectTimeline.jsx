@@ -7,6 +7,7 @@ function ProjectTimeline() {
     { title: "Created Static About page", description: "Created static About page using Navbar, Mission cards, team cards, milestones and achievements" },
     { title: "Created Static Project TimeLine page", description: "Created static Project Timeline page similiar to github branch visualization" },
     { title: "Created Static Registration page", description: "Created static Registration page without any backend connection till now" },
+    { title: "Created Registration API", description: "Created Registration API and connected it to Mongodb Database 'BANKDB', and tested it using thunderclient" },
   ];
 
   const [hoveredCommit, setHoveredCommit] = useState(null);

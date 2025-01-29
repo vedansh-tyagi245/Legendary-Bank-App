@@ -8,9 +8,9 @@ const FormRegistration = () => {
             <div className="page h-screen">
                 <DecorativeElements />
                 <HomePageNavbar />
-                <div className="flex flex-col justify-center items-center w-full" style={{ "paddingLeft": "1.25rem", "paddingRight": "1.25rem", marginTop:"60px" }}>
+                <div className="flex flex-col justify-center items-center w-full" style={{ "paddingLeft": "1.25rem", "paddingRight": "1.25rem", marginTop:"10px" }}>
                     <div
-                        className={`xl:max-w-3xl flex-col justify-center items-center ${darkMode ? "bg-black" : "bg-white"
+                        className={`xl:max-w-3xl flex-col justify-center items-center ${darkMode ? "" : "bg-white"
                             }  w-full sm:p-10 rounded-md`}
                         style={{ "padding": "1.25rem" }}
                     >
@@ -59,6 +59,15 @@ const FormRegistration = () => {
                                     style={{ "paddingTop": "0.75rem", "paddingBottom": "0.75rem", "paddingLeft": "1.25rem", "paddingRight": "1.25rem" }}
                                     type="password"
                                     placeholder="Password"
+                                />
+                                <input
+                                    className={`w-full rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${darkMode
+                                        ? "bg-[#302E30] text-white focus:border-white"
+                                        : "bg-gray-100 text-black focus:border-black"
+                                        }`}
+                                    style={{ "paddingTop": "0.75rem", "paddingBottom": "0.75rem", "paddingLeft": "1.25rem", "paddingRight": "1.25rem" }}
+                                    type="password"
+                                    placeholder="Confirm Password"
                                 />
                                 <button className="tracking-wide font-semibold bg-[#E9522C] text-gray-100 w-full rounded-lg hover:bg-[#E9522C]/90 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none" style={{ "marginTop": "1.25rem", "paddingTop": "1rem", "paddingBottom": "1rem" }}>
                                     <svg
