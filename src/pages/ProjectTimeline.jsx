@@ -6,6 +6,7 @@ function ProjectTimeline() {
     { title: "Created Static Home Page", description: "Created Static homePage Using Navbar, Hero section, Feature section, Footer section " },
     { title: "Created Static About page", description: "Created static About page using Navbar, Mission cards, team cards, milestones and achievements" },
     { title: "Created Static Project TimeLine page", description: "Created static Project Timeline page similiar to github branch visualization" },
+    { title: "Created Static Registration page", description: "Created static Registration page without any backend connection till now" },
   ];
 
   const [hoveredCommit, setHoveredCommit] = useState(null);
