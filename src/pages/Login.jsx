@@ -4,6 +4,8 @@ import DancingSticker from "../assets/DancingSticker.gif";
 import Logo from "../assets/logo.svg";
 import DecorativeElement from "../components/DecorativeElements";
 import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -12,6 +14,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+
   // Handle form submission
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -19,6 +22,7 @@ export default function Login() {
     // Basic client-side validation
     if (!email || !password) {
       setError("Please fill in both fields.");
+      // toast.error("Please fill in both fields."); // Display toast for validation
       return;
     }
 
@@ -37,14 +41,17 @@ export default function Login() {
       const data = await response.json();
 
       if (response.ok) {
-        // Redirect to home/dashboard or another page
+        // Success message and redirect
+        // toast.success("Login successful! Redirecting to dashboard...");
         navigate("/dashboard");
       } else {
         // Handle server-side errors (e.g., invalid credentials)
         setError(data.message || "Login failed. Please try again.");
+        // toast.error(data.message || "Login failed. Please try again.");
       }
     } catch (error) {
       setError("An error occurred while logging in.");
+      // toast.error("An error occurred while logging in.");
     } finally {
       setLoading(false);
     }
@@ -53,6 +60,7 @@ export default function Login() {
   return (
     <section className="h-screen">
       <DecorativeElement />
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
       <div className="container h-full p-10 text-white">
         <div className="g-6 flex h-full flex-wrap items-center justify-center text-white0">
           <div className="w-full">
@@ -61,7 +69,9 @@ export default function Login() {
                 {/* Left column container */}
                 <div className="px-4 md:px-0 lg:w-6/12">
                   <div className="md:mx-6 md:p-12">
-                    <Link to={'/'} className="text-white inline bg-blue-700 text-lg rounded px-4 py-1">{"<-Back"}</Link>
+                    <Link to={'/'} className="text-white inline text-lg rounded px-4 py-1" style={{
+                      background: "linear-gradient(to right, #1e3c72, #2a5298)",
+                    }}>{"<-Back"}</Link>
                     {/* Logo */}
                     <div className="text-center">
                       <img className="mx-auto w-20" src={Logo} alt="logo" />

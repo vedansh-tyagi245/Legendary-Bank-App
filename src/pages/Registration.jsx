@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import DecorativeElements from "../components/DecorativeElements"
 import HomePageNavbar from "../components/HomePageNavbar"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const FormRegistration = () => {
+    const navigate = useNavigate();
     const [darkMode, setDarkMode] = useState(true);
 
     const [formData, setFormData] = useState({
@@ -28,29 +31,21 @@ const FormRegistration = () => {
         e.preventDefault();
 
         if (formData.password !== formData.confirmPassword) {
-            setError("Passwords do not match!");
+            toast.error("Passwords do not match!");
             return;
         }
-        setError("");
 
         try {
             const response = await fetch("http://localhost:4000/api/v1/registration/send", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    fullName: formData.fullName,
-                    email: formData.email,
-                    phone: formData.phone,
-                    password: formData.password,
-                }),
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
             });
 
             const data = await response.json();
 
             if (data.success) {
-                alert("Registration successful!");
+                toast.success("Registration successful!");
                 setFormData({
                     fullName: "",
                     email: "",
@@ -58,17 +53,19 @@ const FormRegistration = () => {
                     password: "",
                     confirmPassword: "",
                 });
+                navigate('/login');
             } else {
-                alert(`Error: ${data.message}`);
+                toast.error(`Error: ${data.message}`);
             }
         } catch (error) {
             console.error("Error during registration:", error);
-            alert("An error occurred while submitting the form.");
+            toast.error("An error occurred while submitting the form.");
         }
     };
 
     return (
         <>
+            <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
             <div className="page h-screen">
                 <DecorativeElements />
                 <HomePageNavbar />
@@ -84,7 +81,7 @@ const FormRegistration = () => {
                             Register for a free account
                         </h1>
                         <div className="w-full flex justify-center items-center" style={{ "marginTop": "2rem" }}>
-                            <div className="mx-auto max-w-xs sm:max-w-md md:max-w-lg flex flex-col gap-4">
+                            <form className="mx-auto max-w-xs sm:max-w-md md:max-w-lg flex flex-col gap-4" autoComplete="new-password">
                                 <div className="flex flex-col sm:flex-row gap-3">
                                     <input
                                         className={`w-[300px] sm:w-[700px] rounded-lg font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none  focus:border-2  focus:outline ${darkMode
@@ -97,6 +94,7 @@ const FormRegistration = () => {
                                         value={formData.fullName}
                                         onChange={handleInputChange}
                                         name="fullName"
+                                        autoComplete="new-password"
                                     />
                                 </div>
                                 <input
@@ -110,6 +108,7 @@ const FormRegistration = () => {
                                     value={formData.email}
                                     onChange={handleInputChange}
                                     name="email"
+                                    autoComplete="new-password"
                                 />
                                 <input
                                     className={`w-full rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${darkMode
@@ -122,6 +121,7 @@ const FormRegistration = () => {
                                     value={formData.phone}
                                     onChange={handleInputChange}
                                     name="phone"
+                                    autoComplete="new-password"
                                 />
                                 <input
                                     className={`w-full rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${darkMode
@@ -134,6 +134,7 @@ const FormRegistration = () => {
                                     value={formData.password}
                                     onChange={handleInputChange}
                                     name="password"
+                                    autoComplete="new-password"
                                 />
                                 <input
                                     className={`w-full rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${darkMode
@@ -146,6 +147,7 @@ const FormRegistration = () => {
                                     value={formData.confirmPassword}
                                     onChange={handleInputChange}
                                     name="confirmPassword"
+                                    autoComplete="new-password"
                                 />
                                 <button className="tracking-wide font-semibold bg-[#E9522C] text-gray-100 w-full rounded-lg hover:bg-[#E9522C]/90 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none" style={{ "marginTop": "1.25rem", "paddingTop": "1rem", "paddingBottom": "1rem" }} onClick={handleSubmit}>
                                     <svg
@@ -169,7 +171,7 @@ const FormRegistration = () => {
                                         <Link to={'/login'} className="text-[#E9522C] font-semibold">Login</Link>
                                     </a>
                                 </p>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

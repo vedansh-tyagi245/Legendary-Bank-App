@@ -18,7 +18,7 @@ function HomePageNavbar() {
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/'}>Home</Link></li>
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/about'}>About Us</Link></li>
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/products'}>Products</Link></li>
-                    <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/Eservices'}>Payment-Gateway</Link></li>
+                    <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/payment'}>Payment-Gateway</Link></li>
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/Investor'}>Investing</Link></li>
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/customercare'}>Customer Care</Link></li>
                     <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center'><Link to={'/login'}>Login</Link></li>
@@ -33,7 +33,7 @@ function HomePageNavbar() {
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/'}>Home</Link></li>
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/about'}>About Us</Link></li>
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/products'}>Products</Link></li>
-                <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/Eservices'}>E-services</Link></li>
+                <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/payment'}>E-services</Link></li>
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/Investor'}>Investor Info</Link></li>
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/customercare'}>Customer Care</Link></li>
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/login'}>Login</Link></li>
