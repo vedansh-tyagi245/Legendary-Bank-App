@@ -34,7 +34,7 @@ function HomePageNavbar() {
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/about'}>About Us</Link></li>
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/products'}>Products</Link></li>
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/payment'}>E-services</Link></li>
-                <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/Investor'}>Investor Info</Link></li>
+                <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/dashboard'}>temp dash</Link></li>
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/customercare'}>Customer Care</Link></li>
                 <li className='hover:font-bold cursor-pointer hover:text-gray-400 text-center border-b-2' style={{ borderColor: 'rgba(255, 255, 255, 0.05)' }}><Link to={'/login'}>Login</Link></li>
             </ul>
