@@ -3,6 +3,7 @@ import Logo from "../assets/logo.svg"
 import { Link } from 'react-router-dom'
 import DashBoardLoan from '../components/DashBoardLoan';
 import DecorativeElements from '../components/DecorativeElements';
+import DashBoardPayment from '../components/DashBoardPayment';
 
 function DashBoard() {
 
@@ -145,6 +146,7 @@ function DashBoard() {
          </aside>
 
          {content === "loan" && <DashBoardLoan />}
+         {content === "payment" && <DashBoardPayment/>}
 
       </div>
    )
