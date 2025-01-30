@@ -42,8 +42,8 @@ function DashBoard() {
             </div>
          </nav>
 
-         <aside id="logo-sidebar" className={`${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform border-r sm:translate-x-0 border-gray-700`}>
-            <div class="h-full px-3 py-4 overflow-y-auto">
+         <aside id="logo-sidebar" className={`${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform border-r sm:translate-x-0 bg-gray-800 border-gray-700`}>
+            <div class="h-full px-3 py-4 overflow-y-auto bg-gray-800">
                <ul class="space-y-2 font-medium">
                   <li>
                      <a href="#" class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group" onClick={() => setContent('account_overview')}>
