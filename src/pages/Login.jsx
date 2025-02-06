@@ -8,7 +8,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -20,7 +20,7 @@ export default function Login() {
     e.preventDefault();
 
     // Basic client-side validation
-    if (!email || !password) {
+    if (!phone || !password) {
       setError("Please fill in both fields.");
       // toast.error("Please fill in both fields."); // Display toast for validation
       return;
@@ -35,7 +35,7 @@ export default function Login() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ phone, password }),
       });
 
       const data = await response.json();
@@ -43,6 +43,7 @@ export default function Login() {
       if (response.ok) {
         // Success message and redirect
         // toast.success("Login successful! Redirecting to dashboard...");
+        localStorage.setItem("userPhone", data.phone); // Assuming the backend sends phone number in response
         navigate("/dashboard");
       } else {
         // Handle server-side errors (e.g., invalid credentials)
@@ -85,10 +86,10 @@ export default function Login() {
                       {/* Email input */}
                       <TEInput
                         type="text"
-                        label="Email"
+                        label="Phone"
                         className="mb-4"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
                       />
 
                       {/* Password input */}
