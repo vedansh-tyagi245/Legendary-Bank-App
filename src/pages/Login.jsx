@@ -36,6 +36,7 @@ export default function Login() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ phone, password }),
+        credentials: "include",  // 🔥 IMPORTANT: Ensures cookies are saved in the browser
       });
 
       const data = await response.json();

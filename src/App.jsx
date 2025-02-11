@@ -8,12 +8,34 @@ import Login from './pages/Login';
 import PaymentGateway from './components/PaymentGateway';
 import DashBoard from './pages/DashBoard';
 
-// Protected Route Component
 const ProtectedRoute = ({ element }) => {
-  const userPhone = localStorage.getItem("userPhone");
+  const [auth, setAuth] = useState(null);
 
-  return userPhone ? element : <Navigate to="/login" />;
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await fetch("http://localhost:4000/api/v1/dashboard", {
+          method: "GET",
+          credentials: "include",
+        });
+
+        if (response.ok) {
+          setAuth(true);
+        } else {
+          setAuth(false);
+        }
+      } catch (error) {
+        setAuth(false);
+      }
+    };
+
+    checkAuth();
+  }, []);
+
+  if (auth === null) return <p>Loading...</p>;  // Show loading state
+  return auth ? element : <Navigate to="/login" />;
 };
+
 
 function App() {
   return (
