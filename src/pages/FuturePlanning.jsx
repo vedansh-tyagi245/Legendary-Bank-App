@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import HomePageNavbar from '../components/HomePageNavbar'
 import DecorativeElements from '../components/DecorativeElements'
 import Welcome from '../components/FuturePlanning/Welcome'
-import UserSelection from '../components/FuturePlanning/userSelection'
+import UserSelection from '../components/FuturePlanning/UserSelection'
 
 function FuturePlanning() {
 
