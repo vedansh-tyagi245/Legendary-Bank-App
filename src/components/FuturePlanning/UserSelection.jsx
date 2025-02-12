@@ -1,5 +1,5 @@
 import React from 'react'
-import POG from "../../assets/POG.gif";
+// import POG from "../../assets/POG.gif";
 
 function UserSelection({setStep, setUserType}) {
   return (
