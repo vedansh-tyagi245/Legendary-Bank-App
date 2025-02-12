@@ -13,8 +13,8 @@ function FuturePlanning() {
         <div className='h-screen'>
             <HomePageNavbar />
             <DecorativeElements />
-            {step == 0 && <Welcome setStep={setStep} />}
-            {step == 1 && <UserSelection setStep={setStep} setUserType={setUserType} />}
+            {step === 0 && <Welcome setStep={setStep} />}
+            {step === 1 && <UserSelection setStep={setStep} setUserType={setUserType} />}
         </div>
     )
 }
