@@ -4,8 +4,8 @@ import React from 'react'
 function UserSelection({setStep, setUserType}) {
   return (
     <div className='flex'>
-        <div className='left'></div>
-        <div className='right'></div>
+        <div className='left'>One</div>
+        <div className='right'>Two</div>
     </div>
   )
 }
