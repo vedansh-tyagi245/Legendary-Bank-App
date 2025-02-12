@@ -7,7 +7,7 @@ import Registration from './pages/Registration';
 import Login from './pages/Login';
 import PaymentGateway from './components/PaymentGateway';
 import DashBoard from './pages/DashBoard';
-import FuturePlanning from './pages/FuturePlanning';
+// import FuturePlanning from './pages/FuturePlanning';
 
 const ProtectedRoute = ({ element }) => {
   const [auth, setAuth] = useState(null);
