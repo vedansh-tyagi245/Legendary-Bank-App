@@ -1,5 +1,5 @@
 import React from "react";
-import POG from "../../assets/PO G.gif";
+import POG from "../../assets/POG.gif";
 
 function Welcome({ setStep }) {
     return (

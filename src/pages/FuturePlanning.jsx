@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import HomePageNavbar from '../components/HomePageNavbar'
 import DecorativeElements from '../components/DecorativeElements'
-// import Welcome from '../components/FuturePlanning/Welcome'
-// import UserSelection from '../components/FuturePlanning/userSelection'
+import Welcome from '../components/FuturePlanning/Welcome'
+import UserSelection from '../components/FuturePlanning/userSelection'
 
 function FuturePlanning() {
 
@@ -13,8 +13,8 @@ function FuturePlanning() {
         <div className='h-screen'>
             <HomePageNavbar />
             <DecorativeElements />
-            {/* {step == 0 && <Welcome setStep={setStep} />} */}
-            {/* {step == 1 && <UserSelection setStep={setStep} setUserType={setUserType} />} */}
+            {step == 0 && <Welcome setStep={setStep} />}
+            {step == 1 && <UserSelection setStep={setStep} setUserType={setUserType} />}
         </div>
     )
 }
