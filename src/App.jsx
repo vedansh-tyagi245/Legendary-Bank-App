@@ -7,7 +7,7 @@ import Registration from './pages/Registration';
 import Login from './pages/Login';
 import PaymentGateway from './components/PaymentGateway';
 import DashBoard from './pages/DashBoard';
-// import FuturePlanning from './pages/FuturePlanning';
+import FuturePlanning from './pages/FuturePlanning';
 
 const ProtectedRoute = ({ element }) => {
   const [auth, setAuth] = useState(null);
@@ -49,7 +49,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/payment" element={<PaymentGateway />} />
           <Route path="/timeline" element={<ProjectTimeline />} />
-          {/* <Route path="/products" element={<FuturePlanning/>} /> */}
+          <Route path="/products" element={<FuturePlanning/>} />
           <Route path="/contact" element={<div>Contact Page</div>} />
 
           {/* Protected Dashboard Route */}
